@@ -49,8 +49,10 @@ h1, h2, h3 {
 }
 
 img {
-    width: 100%;
-} 
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
 video {
     width: 100%;
@@ -119,6 +121,19 @@ nav ul {
 .banner-wrapper {
     text-align: center;
 }
+
+.case-item {
+    position: relative;
+}
+
+.case-caption {
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+    padding: .25rem;
+    max-width: 80%;
+}
+
 
 @media (max-width: 48rem) {
     .grid {
