@@ -13,6 +13,8 @@
     margin: 0;
 }
 
+ 
+
 ul {
     margin-block-start: 1em;     
     margin-block-end: 1em;       
@@ -113,6 +115,7 @@ nav ul {
 .footer-wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;  
 }
 
 .next-nav {
