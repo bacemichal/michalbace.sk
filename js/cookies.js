@@ -1,63 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const banner    = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("accept-cookies");
-  const rejectBtn = document.getElementById("reject-cookies");
-  const closeBtn  = document.getElementById("close-banner");
-  const manageBtn = document.getElementById("manage-cookies");
+  const banner = document.getElementById("cookie-banner");
+  const buttons = {
+    accept: document.getElementById("accept-cookies"),
+    reject: document.getElementById("reject-cookies"),
+    close:  document.getElementById("close-banner"),
+    manage: document.getElementById("manage-cookies"),
+  };
 
-  // 🔑 Funkcia na spustenie GA4
-  function enableAnalytics() {
-    // vloží GA script dynamicky
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-D8CXSNXYJC";
-    document.head.appendChild(script);
+  // Spustenie GA4
+  const enableAnalytics = () => {
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=G-D8CXSNXYJC";
+    document.head.appendChild(s);
+    s.onload = () => {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = (...args) => dataLayer.push(args);
+      gtag("js", new Date());
+      gtag("config", "G-D8CXSNXYJC");
+    };
+  };
 
-    // inicializácia
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = gtag;
+  // Helper na uloženie voľby
+  const setConsent = (value) => {
+    localStorage.setItem("cookieConsent", value);
+    banner.style.display = "none";
+    if (value === "accepted") enableAnalytics();
+  };
 
-    gtag('js', new Date());
-    gtag('config', 'G-D8CXSNXYJC');
-  }
-
-  // 1. Pri načítaní pozri, či už user rozhodol
+  // Pri načítaní
   const consent = localStorage.getItem("cookieConsent");
-
-  if (consent === null) {
-    banner.style.display = "block"; // ešte nič → ukáž banner
-  } else {
-    banner.style.display = "none"; // už rozhodol → skry banner
-    if (consent === "accepted") {
-      enableAnalytics(); // spusti GA ak je súhlas
-    }
+  if (!consent) {
+    banner.style.display = "block";
+  } else if (consent === "accepted") {
+    enableAnalytics();
   }
 
-  // 2. Klik na Accept
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "accepted");
-    banner.style.display = "none";
-    enableAnalytics(); // spusti GA4
-  });
-
-  // 3. Klik na Reject
-  rejectBtn.addEventListener("click", () => {
-    localStorage.setItem("cookieConsent", "rejected");
-    banner.style.display = "none";
-  });
-
-  // 4. Klik na Close (funguje ako Reject)
-  closeBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    localStorage.setItem("cookieConsent", "rejected");
-    banner.style.display = "none";
-  });
-
-  // 5. Manage cookies – reset
-  manageBtn.addEventListener("click", (e) => {
+  // Eventy
+  buttons.accept.onclick = () => setConsent("accepted");
+  buttons.reject.onclick = () => setConsent("rejected");
+  buttons.close.onclick  = (e) => { e.preventDefault(); setConsent("rejected"); };
+  buttons.manage.onclick = (e) => {
     e.preventDefault();
     localStorage.removeItem("cookieConsent");
     banner.style.display = "block";
-  });
+  };
 });
