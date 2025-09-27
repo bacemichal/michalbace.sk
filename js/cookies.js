@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const consent = localStorage.getItem("cookieConsent");
   if (!consent) {
-    banner.style.display = "block";
+    banner.style.display = "flex";
   } else if (consent === "accepted") {
     enableAnalytics();
   } else {
