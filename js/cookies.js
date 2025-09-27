@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // vloží GA script dynamicky
     const script = document.createElement("script");
     script.async = true;
-    script.src = "https://www.googletagmanager.com/gtag/js?id=G-DBCSXNXYJC";
+    script.src = "https://www.googletagmanager.com/gtag/js?id=G-D8CXSNXYJC";
     document.head.appendChild(script);
 
     // inicializácia
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', 'G-DBCSXNXYJC');
+    gtag('config', 'G-D8CXSNXYJC');
   }
 
   // 1. Pri načítaní pozri, či už user rozhodol
