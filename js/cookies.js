@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
       window.gtag = gtag;
       gtag("js", new Date());
       gtag("config", "G-D8CXSNXYJC", { debug_mode: true });
+
+      gtag("event", "debug_test", { foo: "bar" });
+      console.log("📡 GA spustený a testovací event odoslaný");
     };
     document.head.appendChild(script);
   }
