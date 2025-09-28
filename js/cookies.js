@@ -3,49 +3,68 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAccept = document.getElementById("accept-cookies");
   const btnReject = document.getElementById("reject-cookies");
   const btnClose  = document.getElementById("close-banner");
-  const btnManage = document.getElementById("manage-cookies");
 
-  function enableAnalytics() {
+  // Inicializácia dataLayer a gtag funkcie
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  // Default: nič nedovoľ, kým užívateľ nerozhodne
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    analytics_storage: 'denied'
+  });
+
+  // Funkcia na načítanie GA skriptu
+  function loadAnalytics() {
+    if (window.gaLoaded) return; // aby sa nenačítalo 2x
+    window.gaLoaded = true;
+
     const script = document.createElement("script");
     script.async = true;
     script.src = "https://www.googletagmanager.com/gtag/js?id=G-D8CXSNXYJC";
+    document.head.appendChild(script);
+
     script.onload = () => {
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
       gtag("js", new Date());
       gtag("config", "G-D8CXSNXYJC", { debug_mode: true });
-
-      gtag("event", "debug_test", { foo: "bar" });
-      console.log("📡 GA spustený a testovací event odoslaný");
+      console.log("📡 GA spustený");
     };
-    document.head.appendChild(script);
   }
 
+  // Funkcia pre nastavenie consentu
   function setConsent(value) {
     localStorage.setItem("cookieConsent", value);
     banner.style.display = "none";
-    if (value === "accepted") enableAnalytics();
+
+    if (value === "accepted") {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        analytics_storage: 'granted'
+      });
+      loadAnalytics();
+    } else {
+      gtag('consent', 'update', {
+        ad_storage: 'denied',
+        analytics_storage: 'denied'
+      });
+    }
   }
 
+  // Po načítaní stránky skontroluj, či už user rozhodol
   const consent = localStorage.getItem("cookieConsent");
   if (!consent) {
     banner.style.display = "block";
   } else if (consent === "accepted") {
-    enableAnalytics();
+    setConsent("accepted"); // rovno spusti GA
   } else {
-    banner.style.display = "none";
+    setConsent("rejected");
   }
 
+  // Event listenery
   btnAccept.addEventListener("click", () => setConsent("accepted"));
   btnReject.addEventListener("click", () => setConsent("rejected"));
   btnClose.addEventListener("click", (e) => {
     e.preventDefault();
     setConsent("rejected");
-  });
-  btnManage.addEventListener("click", (e) => {
-    e.preventDefault();
-    localStorage.removeItem("cookieConsent");
-    banner.style.display = "block";
   });
 });
