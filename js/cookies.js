@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnAccept = document.getElementById("accept-cookies");
   const btnReject = document.getElementById("reject-cookies");
   const btnClose  = document.getElementById("close-banner");
+  const btnManage = document.getElementById("manage-cookies");
 
   // Inicializácia dataLayer a gtag funkcie
   window.dataLayer = window.dataLayer || [];
@@ -67,4 +68,13 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     setConsent("rejected");
   });
+
+  // Manage cookies (ak existuje v HTML)
+  if (btnManage) {
+    btnManage.addEventListener("click", (e) => {
+      e.preventDefault();
+      localStorage.removeItem("cookieConsent");
+      banner.style.display = "block";
+    });
+  }
 });
