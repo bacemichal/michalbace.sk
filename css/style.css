@@ -143,48 +143,7 @@ nav ul {
     max-width: 80%;
 }
 
-.cookie-banner {
-    position: fixed;
-    background-color: greenyellow;
-    padding: 1.25rem;
-    max-width: 25rem;
-    bottom: 1.25rem;
-    right: 1.25rem;
-    display: none;
-    flex-direction: column;
-    gap: 1rem;
-}
 
-.btn-primary {
-    background-color: black;
-    border: 1px solid transparent;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    font-family: inherit;
-    font-size: inherit;
-    color: white;s
-}
-
-.btn-secondary {
-    background-color: transparent;
-    border: 1px solid;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    font-family: inherit;
-    font-size: inherit;
-    color: black;
-}
-
-.cookie-actions {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-
-.cookie-header {
-    display: flex;
-    justify-content:space-between;
-}
 
 
 
@@ -199,11 +158,5 @@ nav ul {
         padding-inline: 1rem;
     }
     
-    .cookie-banner {
-        bottom: 0;
-        right: 0;
-        max-width: 100%;
-        left: 0;
-    }
 }
 
