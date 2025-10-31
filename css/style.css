@@ -21,6 +21,12 @@ ul {
     padding-inline-start: 40px;
 }
 
+ol {
+    margin-block-start: 1em;     
+    margin-block-end: 1em;       
+    padding-inline-start: 40px;
+}
+
 p {
     margin-top: 1em;
     margin-bottom: 1em;
@@ -44,6 +50,10 @@ body {
     font-size: var(--fs-400);
     font-weight: var(--fw-400);
     line-height: 1.4;
+}
+
+a {
+  color: black;
 }
 
 
@@ -143,6 +153,27 @@ nav ul {
     max-width: 80%;
 }
 
+.popup {
+    background-color: black;
+    color: white;
+    position: fixed;
+    display: none;
+    bottom: 20px;
+    right: 20px;
+    max-width: 400px;
+    padding: 20px;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.popup a {
+    color: white;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+}
 
 
 
@@ -156,6 +187,17 @@ nav ul {
 
     .container, .container-sm {
         padding-inline: 1rem;
+    }
+
+    .popup {
+        inset: 0;           /* top:0; right:0; bottom:0; left:0; */
+        max-width: none;    /* zruší obmedzenie šírky */
+        width: 100vw;       /* plná šírka obrazovky */
+        height: 100vh;      /* plná výška obrazovky */
+        bottom: auto;       /* zruší predchádzajúce pozície */
+        right: auto;
+        padding: 20px;
+
     }
     
 }
