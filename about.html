@@ -1,59 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="/assets/favicon.png">
-        <link rel="stylesheet" href="/css/style.css">
-        <title>About — Michal Bače</title>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="cb079357-cbde-4f09-ba65-c19ca164725b"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <script type="module" src="./assets/js/main.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="banner-wrapper">
-                <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a></p>
+        <header class="header">
+            <div class="container">
+                <div class="header__text">
+                    <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a>.</p>
+                </div>
             </div>
-        </div>
+        </header>
 
+       
 
         <nav class="back-nav">
             <div class="container">
-                <a href="./">← Back to homepage</a>
+                <a class="site-nav__link" href="/index.html">
+                    <svg width="12" height="11" viewBox="0 0 12 11" aria-hidden="true">
+                        <path d="M5.09087 10.1818L-4.43459e-05 5.09091L5.09087 0L5.96587 0.863636L2.36359 4.46591H11.6931V5.71591H2.36359L5.96587 9.30682L5.09087 10.1818Z" fill="black"/>
+                    </svg>
+                    Back to homepage
+                </a>
             </div>
         </nav>
 
         <main>
-            <div class="container-sm">
-                <div class="about">
-                    <h1>About</h1>
-                    <div class="text-wrapper">
-                        <p>UI/UX designer & Webflow developer with three years of experience in an digital agency. </p>
-                        <p>I see the web as a communication tool — a space where brands can express their voice and values clearly. My role is to transform that voice into a digital presence that feels authentic, connects with people, and fulfills its purpose.</p>
-                        <p>I enjoy collaborating with other creatives, combining ideas and skills to design experiences that are fresh, functional, and true to the brand.</p>
-                        <p>Currently working independently and open to freelance projects or <em>creative</em> collaborations.</p>
-                    </div>
-                    <img src="/assets/profil.webp" alt="">
-                    <p>send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a></p>
+            <section class="hero">
+                <div class="container">
+                    <h1 class="hero-title">About</h1>
                 </div>
+        </section>
+        <div class="container-sm">
+            <div class="about">
+                <div class="paragraph-group">
+                    <p>UI/UX designer & Webflow developer with three years of experience in an digital agency.</p>
+                    <p>I see the web as a communication tool — a space where brands can express their voice and values clearly. My role is to transform that voice into a digital presence that feels authentic, connects with people, and fulfills its purpose.</p>
+                    <p>I enjoy collaborating with other creatives, combining ideas and skills to design experiences that are fresh, functional, and true to the brand.</p>
+                    <p>Currently working independently and open to freelance projects or creative collaborations.</p>
+                </div>
+                <a class="link-inline" href="/assets/images/cv.pdf" target="_blank">
+                    download CV (pdf)
+                    <svg width="11" height="12" viewBox="0 0 11 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5.71595 -1.14441e-05V9.3409L9.30686 5.73863L10.1932 6.61363L5.09095 11.7045L4.43459e-05 6.61363L0.863681 5.73863L4.46595 9.3409V-1.14441e-05H5.71595Z" fill="black"/>
+                    </svg>
+                </a>
+                <img src="/assets/images/profil.webp" alt="">
+                <p>send me message at <a href="#" class="copyEmail">michal.bace@gmail.com</a></p>
             </div>
+        </div>
+
+        
+        
+
+            
         </main>
 
+
+        
+       
+
+
+
+
+        
         
 
 
 
-        <footer>
+        <footer class="footer">
             <div class="container">
-                <div class="footer-wrapper">
+                <div class="footer__wrapper">
                     <p>© 2025 Michal Bače</p>
-                    <a href="changelog.html">v1.2</a>
+                    <p>v 1.3</p>
                 </div>
             </div>
         </footer>
 
-
-        <script src="/js/email.js"></script>
-        
+        <script src="/assets/js/email.js"></script>
+       
     </body>
-
 </html>

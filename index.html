@@ -1,99 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="/assets/favicon.png">
-        <link rel="stylesheet" href="/css/style.css">
-        <title>Web design & development — Michal Bače</title>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="cb079357-cbde-4f09-ba65-c19ca164725b"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <script type="module" src="./assets/js/main.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="banner-wrapper">
-                <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a>.</p>
-            </div>
-        </div>
-
-    
-        <main class="section">
+        <header class="header">
             <div class="container">
-                <div class="grid">
-                    <div class="left">
-                        <h1>ui/ux & webflow development</h1>
-                        <nav>
-                            <ul>
-                                <li><a href="about.html">→ About</a></li>
-                            </ul>
-                        </nav>
-
-                    </div>
-                    <div class="right">
-                        <article>
-                            <a href="./projects/bakarwood.html">
-                                <img src="/assets/bakarwood-thumbnail.webp" alt="">
-                                <h2>Bakarwood (design & dev)</h2>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./projects/rerecon.html">
-                                <video autoplay muted loop playsinline src="/assets/rerecon-hero.mp4"  type="video/mp4"></video>
-                                <h2>Rerecon (design)</h2>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./projects/divadlolab.html">
-                                <img src="/assets/divadlo-lab-mobil.webp" alt="">
-                                <h2>Divadlo lab (design)</h2>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./projects/feztmind.html">
-                                <img src="/assets/fzt-thumbnail.webp" alt="">
-                                <h2>Feztmind (design & dev)</h2>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./projects/notify.html">
-                                <img src="/assets/notify.webp" alt="">
-                                <h2>Notify (design)</h2>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./projects/spefezt.html">
-                                <img src="/assets/spefezt-thumbnail.webp" alt="">
-                                <h2>Spefezt (visual identity)</h2>
-                            </a>
-                        </article>
-                        <article>
-                            <a href="./projects/feztmag.html">
-                                <img src="/assets/feztmag-detail.webp" alt="">
-                                <h2>Feztmag (magazine)</h2>
-                            </a>
-                        </article>
-                    </div>
+                <div class="header__text">
+                    <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a>.</p>
                 </div>
             </div>
+        </header>
+
+
+        <main>
+            <section class="hero main">
+                <div class="container">
+                    <h1 class="hero-title">ui/ux designer & webflow developer</h1>
+                </div>
+            </section>
+
+            <section class="projects">
+                <div class="container">
+                    <div class="projects__layout">
+                        <nav class="site-nav">
+                            <ul>
+                                <li>
+                                    <a class="link-inline site-nav__link" href="/about.html">
+                                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M6.60227 10.1819L5.93182 9.51711L9.88636 5.56825H0V4.6137H9.88636L5.93182 0.664839L6.60227 6.67572e-05L11.6932 5.09098L6.60227 10.1819Z" fill="black"/>
+                                        </svg>
+                                        About
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="projects__list">
+                            <article>
+                                <a href="/projects/divadlo-lab.html" class="projects__item">
+                                    <img src="/assets/images/divadlo-lab-mobil.webp" alt="">
+                                    <h2>Divadlo lab (design)</h2>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="/projects/notify.html" class="projects__item">
+                                    <img src="/assets/images/notify.webp" alt="">
+                                    <h2>Notify (design)</h2>
+                                </a>
+                            </article>
+                            
+                            <article>
+                                <a href="/projects/bakarwood.html" class="projects__item">
+                                    <img src="/assets/images/bakarwood-thumbnail.webp" alt="">
+                                    <h2>Bakarwood (design & dev)</h2>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="/projects/rerecon.html" class="projects__item">
+                                    <video autoplay="" muted="" loop="" playsinline="" src="/assets/images/rerecon-hero.mp4" type="video/mp4"></video>
+                                    <h2>Rerecon (design)</h2>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="/projects/feztmind.html" class="projects__item">
+                                    <video autoplay="" muted="" loop="" playsinline="" src="/assets/images/fzt-hero.mp4" type="video/mp4"></video>
+                                    <h2>Feztmind (design & dev)</h2>
+                                </a>
+                            </article>
+                            <article>
+                                <a href="/projects/feztmag.html" class="projects__item">
+                                    <img src="/assets/images/feztmag-detail.webp" alt="">
+                                    <h2>Feztmag (design)</h2>
+                                </a>
+                            </article>              
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
 
-        
-        
+        <script src="/assets/js/email.js"></script>
 
 
 
-        <footer>
+        <footer class="footer">
             <div class="container">
-                <div class="footer-wrapper">
+                <div class="footer__wrapper">
                     <p>© 2025 Michal Bače</p>
-                    <a href="changelog.html">v1.2</a>
+                    <p>v 1.3</p>
+
                 </div>
             </div>
         </footer>
-
-
-        <script src="/js/email.js"></script>
-        <script src="/js/cookies.js"></script>
-        
     </body>
-
 </html>

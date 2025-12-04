@@ -1,73 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="/assets/favicon.png">
-        <link rel="stylesheet" href="/css/style.css">
-        <title>Bakarwood — Michal Bače</title>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="cb079357-cbde-4f09-ba65-c19ca164725b"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <script type="module" src="/assets/js/main.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="banner-wrapper">
-                <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a></p>
+        <header class="header">
+            <div class="container">
+                <div class="header__text">
+                    <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a>.</p>
+                </div>
             </div>
-        </div>
+        </header>
 
 
         <nav class="back-nav">
             <div class="container">
-                <a href="/">← Back to homepage</a>
+                <a class="link-inline back-nav__link" href="/index.html">
+                    <svg width="12" height="11" viewBox="0 0 12 11" aria-hidden="true">
+                        <path d="M5.09087 10.1818L-4.43459e-05 5.09091L5.09087 0L5.96587 0.863636L2.36359 4.46591H11.6931V5.71591H2.36359L5.96587 9.30682L5.09087 10.1818Z" fill="black"/>
+                    </svg>
+                    Back to homepage
+                </a>
             </div>
         </nav>
 
-        <main class="section-detail">
-            <div class="container">
-                <div class="grid">
-                    <div class="left">
-                        <h1>Bakarwood (design & dev)</h1>
-                        <div class="text-wrapper">
-                            <p>Bakarwood is a family business making unique epoxy furniture. Their challenge was to present their work in a way that truly reflected their philosophy – a focus on quality, local materials, and a personal approach.</p>
-                            <p>After workshops with the client, we defined the core messages and designed a clear site structure. Together, we also came up with interactive elements, including a clickable sample tool that lets users experience choosing the epoxy finish for their furniture.</p>
-                            <p>The result is an online presence that not only showcases the products but also communicates the brand’s values, makes it easy to get in touch, and is prepared for future growth (language versions, new products, or even an online store).</p>
-                            <p>Service: ui/ux, webflow development, photography, content strategy.</p>
-                        </div>
 
-                        <a href="https://www.bakarwood.eu" target="_blank">View live site ↗</a>
-                    </div>
-
-                    <div class="right">
-                        <video autoplay muted loop playsinline src="/assets/bakarwood-produkt.mp4"  type="video/mp4"></video>
-                        <video autoplay muted loop playsinline src="/assets/bakarwood-vzorky.mp4"  type="video/mp4"></video>
-                        <img src="/assets/bakarwood-cta.webp" alt="">
-                        <img src="/assets/bakarwood-moodboard.webp" alt="">
-                        <img src="/assets/bakarwood-process.webp" alt="">
-                    </div>
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Bakarwood (design & dev)</h1>
                 </div>
-            </div>
+            </section>
+
+
+
+
+            <section class="case__content">
+                <div class="container">
+                    <div class="case__layout">
+                        <div class="case__text">
+                            <div class="paragraph-group">
+                                <p>Bakarwood is a family business making unique epoxy furniture. Challenge was to present their work in a way that truly reflected their philosophy – a focus on quality, local materials, and a personal approach.</p>
+                                <p>After workshops with the client, we defined the core messages and designed a clear site structure. Together, we also came up with interactive elements, including a clickable sample tool that lets users experience choosing the epoxy finish for their furniture.</p>
+                                <p>The result is an online presence that not only showcases the products but also communicates the brand’s values, makes it easy to get in touch, and is prepared for future growth (language versions, new products, or even an online store).</p>
+                                <p>Service: ui/ux, webflow development, photography, content strategy.</p>
+                            </div>
+                            <div class="case__actions">
+                                <a class="link-inline" href="https://bakarwood.webflow.io" target="_blank">
+                                    View live site
+                                    <svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true">
+                                        <path d="M0.682706 8.60782L0.000887871 7.93168L6.98952 0.937366H1.39862L1.40998 -0.000133514H8.60316V7.20441H7.6543L7.66566 1.61918L0.682706 8.60782Z" fill="black"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="case__showcase">
+                            <video src="/assets/images/bakarwood-produkt.mp4" type="video/mp4" autoplay muted loop playsinline></video>
+                            <video src="/assets/images/bakarwood-vzorky.mp4" type="video/mp4" autoplay muted loop playsinline></video>
+                            <img src="/assets/images/bakarwood-cta.webp" alt="">
+                            <img src="/assets/images/bakarwood-webflow.webp" alt="">
+                        </div>
+                    </div>     
+                </div>
+            </section>
+
+            <nav class="next-nav">
+                <div class="container">
+                    <a class="link-inline next-nav__link" href="/projects/rerecon.html">
+                        Next (Rerecon)
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.60227 10.1819L5.93182 9.51711L9.88636 5.56825H0V4.6137H9.88636L5.93182 0.664839L6.60227 6.67572e-05L11.6932 5.09098L6.60227 10.1819Z" fill="black"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+
+
+
+           
         </main>
 
-        <nav class="next-nav">
+
+
+        <footer class="footer">
             <div class="container">
-                <a href="rerecon.html">Next (Rerecon) →</a>
-            </div>
-        </nav>
-
-
-        
-
-        <footer>
-            <div class="container">
-                <div class="footer-wrapper">
+                <div class="footer__wrapper">
                     <p>© 2025 Michal Bače</p>
-                    <a href="changelog.html">v1.2</a>
+                    <p>v 1.3</p>
+
                 </div>
             </div>
         </footer>
 
-        <script src="/js/email.js"></script>
-          
+        <script src="/assets/js/email.js"></script>
     </body>
-
 </html>

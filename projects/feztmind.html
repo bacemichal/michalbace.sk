@@ -1,80 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/png" href="/assets/favicon.png">
-        <link rel="stylesheet" href="/css/style.css">
-        <title>Feztmind — Michal Bače</title>
-        <script defer src="https://cloud.umami.is/script.js" data-website-id="cb079357-cbde-4f09-ba65-c19ca164725b"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/main.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <script type="module" src="/assets/js/main.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/SplitText.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <div class="banner-wrapper">
-                <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a></p>
+        <header class="header">
+            <div class="container">
+                <div class="header__text">
+                    <p>open to freelance projects or <em>creative</em> collaborations. send me a message at <a href="#" class="copyEmail">michal.bace@gmail.com</a>.</p>
+                </div>
             </div>
-        </div>
+        </header>
 
 
         <nav class="back-nav">
             <div class="container">
-                <a href="/">← Back to homepage</a>
+                <a class="link-inline back-nav__link" href="/index.html">
+                    <svg width="12" height="11" viewBox="0 0 12 11" aria-hidden="true">
+                        <path d="M5.09087 10.1818L-4.43459e-05 5.09091L5.09087 0L5.96587 0.863636L2.36359 4.46591H11.6931V5.71591H2.36359L5.96587 9.30682L5.09087 10.1818Z" fill="black"/>
+                    </svg>
+                    Back to homepage
+                </a>
             </div>
         </nav>
 
-        <main class="section-detail">
-            <div class="container">
-                <div class="grid">
-                    <div class="left">
-                        <h1>Feztmind (design & dev)</h1>
-                        <div class="text-wrapper">
-                            <p>Feztmind represents the Slovakian parkour scene.</p>
-                            <p>After the launch of a three-day parkour street jam — <a href="spefezt.html" target="_blank">Spefezt</a>, there was a need to share event details, introduce a new jam concept, and enable simple reservations – that’s how the first MVP was created.</p>
-                            <p>Later, we added an English version for international guests and expanded the site with an online shop.</p>
-                            <p>Today, the site is used to handle event registrations.</p>
-                        </div>
 
-                        <a href="https://feztmind.webflow.io" target="_blank">View live site ↗</a>
-                    </div>
-
-                    <div class="right">
-                        <video autoplay muted loop playsinline src="/assets/fzt-hero.mp4"  type="video/mp4"></video>
-                        <img src="/assets/fzt-spefezt.webp" alt="">
-                        <img src="/assets/fzt-homepage.webp" alt="">
-                        <img src="/assets/feztmind-detail.webp" alt="">
-                        <figure class="case-item">
-                            <img src="/assets/fzt-moodboard.webp" alt="">
-                            <figcaption class="case-caption">
-                                A moodboard set the direction, with clean type to highlight raw street photography and merch
-                            </figcaption>
-                        </figure>
-                    </div>
+        <main>
+            <section class="hero">
+                <div class="container">
+                    <h1>Feztmind (design & dev)</h1>
                 </div>
-            </div>
+            </section>
+
+
+
+
+            <section class="case__content">
+                <div class="container">
+                    <div class="case__layout">
+                        <div class="case__text">
+                            <div class="paragraph-group">
+                                <p>Feztmind represents the Slovakian parkour scene.</p>
+                                <p>After the launch of a three-day parkour street jam — Spefezt, there was a need to share event details, introduce a new jam concept, and enable simple reservations – that’s how the first MVP was created.</p>
+                                <p>Later, we added an English version for international guests and expanded the site with an online shop.</p>
+                                <p>Today, the site is used to handle event registrations.</p>
+                                <p>Service: ui/ux, webflow development</p>
+                            </div>
+                            <div class="case__actions">
+                                <a class="link-inline" href="https://feztmind.webflow.io" target="_blank">
+                                    View live site
+                                    <svg width="9" height="9" viewBox="0 0 9 9" aria-hidden="true">
+                                        <path d="M0.682706 8.60782L0.000887871 7.93168L6.98952 0.937366H1.39862L1.40998 -0.000133514H8.60316V7.20441H7.6543L7.66566 1.61918L0.682706 8.60782Z" fill="black"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="case__showcase">
+                            <video src="/assets/images/fzt-hero.mp4" type="video/mp4" autoplay muted loop playsinline></video>
+                            <img src="/assets/images/fzt-spefezt.webp" alt="">
+                            <img src="/assets/images/fzt-homepage.webp" alt="">
+                            <img src="/assets/images/feztmind-detail.webp" alt="">
+                            <img src="/assets/images/fzt-moodboard.webp" alt="">
+                        </div>
+                    </div>     
+                </div>
+            </section>
+
+            <nav class="next-nav">
+                <div class="container">
+                    <a class="link-inline next-nav__link" href="/projects/notify.html">
+                        Next (Notify)
+                        <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.60227 10.1819L5.93182 9.51711L9.88636 5.56825H0V4.6137H9.88636L5.93182 0.664839L6.60227 6.67572e-05L11.6932 5.09098L6.60227 10.1819Z" fill="black"/>
+                        </svg>
+
+                        
+                    </a>
+                </div>
+            </nav>
+
+
+
+           
         </main>
 
-        <nav class="next-nav">
+
+
+        <footer class="footer">
             <div class="container">
-                <a href="notify.html">Next (Notify) →</a>
-            </div>
-        </nav>
-
-
-        
-
-        <footer>
-            <div class="container">
-                <div class="footer-wrapper">
+                <div class="footer__wrapper">
                     <p>© 2025 Michal Bače</p>
-                    <a href="changelog.html">v1.2</a>
+                    <p>v 1.3</p>
+
                 </div>
             </div>
         </footer>
 
-
-
-        <script src="/js/email.js"></script>
-
+        <script src="/assets/js/email.js"></script>
     </body>
-
 </html>
